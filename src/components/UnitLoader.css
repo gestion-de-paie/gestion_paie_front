@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .unit-loader {
+    width: 80px;
+    height: 140px;
+    position: relative;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: drawUnit 3s linear infinite;
+  }
+  
+  .unit-loader::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: #0720dc;
+    border-radius: 50%;
+    animation: blink 1s ease-in-out infinite;
+  }
+  
+  .slot {
+    position: absolute;
+    width: 40px;
+    height: 8px;
+    background-color: #0720dc;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: appearSlot 3s linear infinite;
+  }
+  
+  .slot:nth-child(2) { top: 40px; animation-delay: 0.5s; }
+  .slot:nth-child(3) { top: 60px; animation-delay: 1s; }
+  .slot:nth-child(4) { top: 80px; animation-delay: 1.5s; }
+  .slot:nth-child(5) { top: 100px; animation-delay: 2s; }
+  
+  @keyframes drawUnit {
+    0% { transform: scaleY(0); }
+    20% { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  
+  @keyframes appearSlot {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  
+  .loading-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #004a8f;
+    font-size: 1rem;
+  }
+  
