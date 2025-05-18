@@ -1,7 +1,7 @@
-import React from "react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import "./dashboard.css"; // le CSS global
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -11,7 +11,7 @@ const Dashboard = () => {
         <Topbar />
         <div className="content">
           {/* Contenu principal ici */}
-          <h2>Bienvenue sur le dashboard ITECH</h2>
+          <Outlet/>
         </div>
       </div>
     </div>
